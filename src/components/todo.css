@@ -1,0 +1,89 @@
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 400px;
+  min-width: 300px;
+  padding: 30px;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 15px;
+  background-color: white;
+}
+
+.todo-btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.empty-text {
+  font-size: 30px;
+  text-align: center;
+}
+
+.input-todo {
+  display: flex;
+  width: 100%;
+  gap: 5px;
+}
+
+.input-todo input {
+  flex: 1;
+  padding: 6px 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  font-size: 25px;
+  padding: 5px;
+}
+
+.todo-item button {
+  margin-left: auto;
+}
+
+button {
+  min-height: 30px;
+  min-width: 70px;
+  padding: 6px 10px;
+  background: linear-gradient(
+    93deg,
+    rgb(64, 206, 198) 0%,
+    rgb(25, 162, 154) 100%
+  );
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background: linear-gradient(93deg, rgb(47, 144, 140) 0%, rgb(6, 40, 38) 100%);
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.filter-buttons button.active {
+  background: black;
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  color: #666;
+  border: 1px solid #aaa;
+}

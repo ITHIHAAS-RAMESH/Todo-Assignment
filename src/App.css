@@ -1,0 +1,29 @@
+body {
+  background-image: url("/bg-white.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: rgb(0, 0, 0);
+}
+
+h1 {
+  font-family: "Roboto";
+}
+
+.main-heading {
+  width: 100%;
+
+  background-color: rgb(255, 255, 255);
+}
+.outer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
