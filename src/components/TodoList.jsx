@@ -6,20 +6,22 @@ export const Todo = () => {
   const [filter, setFilter] = useState("all");
   const handleAdd = () => {
     if (value.length > 0) {
-      setTodos([...todos, { text: value, completed: false }]);
+      const newTodo = {
+        id: Date.now(),
+        text: value,
+        completed: false,
+      };
+      setTodos([...todos, newTodo]);
       setValue("");
     }
   };
-  const handleDelete = (index) => {
-    console.log(index);
-    const newTodos = todos.filter((todo, i) => {
-      return i != index;
-    });
-    setTodos(newTodos);
+  const handleDelete = (id) => {
+    const updatedTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(updatedTodos);
   };
-  const toggleCompleted = (index) => {
-    const updatedTodos = todos.map((todo, i) =>
-      i === index ? { ...todo, completed: !todo.completed } : todo
+  const toggleCompleted = (id) => {
+    const updatedTodos = todos.map((todo) =>
+      todo.id === id ? { ...todo, completed: !todo.completed } : todo
     );
     setTodos(updatedTodos);
   };
@@ -72,11 +74,11 @@ export const Todo = () => {
         ) : (
           <ul>
             {filteredTodos.map((todo, index) => (
-              <div className="todo-item" key={index}>
+              <div className="todo-item" key={todo.id}>
                 <input
                   type="checkbox"
                   checked={todo.completed}
-                  onChange={() => toggleCompleted(index)}
+                  onChange={() => toggleCompleted(todo.id)}
                 />
                 <span
                   style={{
@@ -86,7 +88,7 @@ export const Todo = () => {
                 >
                   {todo.text}
                 </span>
-                <button onClick={() => handleDelete(index)}>Delete</button>
+                <button onClick={() => handleDelete(todo.id)}>Delete</button>
               </div>
             ))}
           </ul>
